@@ -1,6 +1,4 @@
-import React from 'react';
 import './Hero.css';
-import Logo from './Logo';
 import SnowAnimation from './SnowAnimation';
 
 const Hero = () => {
