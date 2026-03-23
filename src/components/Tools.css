@@ -1,0 +1,215 @@
+.tools {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tools-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.tools-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.tool-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.tool-logo-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--accent-color);
+}
+
+.tool-logo-item:hover .tool-name {
+  color: var(--accent-color);
+  transform: translateY(2px);
+}
+
+.tool-logo-wrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-logo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 180, 216, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.tool-logo-item:hover .tool-logo-wrapper {
+  background: #e8f4f8;
+  box-shadow: 0 8px 25px rgba(0, 180, 216, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tool-logo-item:hover .tool-logo-wrapper::before {
+  width: 150px;
+  height: 150px;
+}
+
+.tool-logo-item:hover .tool-logo {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+.tool-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.tool-logo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+}
+
+.tool-name {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .tools-container {
+    padding: 0 1.5rem;
+  }
+
+  .tools-logo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tool-logo-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tools {
+    padding: 4rem 0;
+  }
+
+  .tools-container {
+    padding: 0 1rem;
+  }
+
+  .tools-logo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tool-logo-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tool-name {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 568px) {
+  .tools-logo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 1rem;
+  }
+
+  .tool-logo-wrapper {
+    width: 70px;
+    height: 70px;
+    padding: 0.75rem;
+  }
+
+  .tool-logo-fallback {
+    font-size: 1.5rem;
+  }
+
+  .tool-name {
+    font-size: 0.8rem;
+  }
+}
+

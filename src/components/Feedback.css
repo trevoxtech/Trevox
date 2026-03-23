@@ -1,0 +1,180 @@
+/* Feedback Section - Awwwards Aesthetic */
+.feedback-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.feedback-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.feedback-header {
+  text-align: left;
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+}
+
+.feedback-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.feedback-header p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 600px;
+  border-left: 2px solid var(--accent-color);
+  padding-left: 1.25rem;
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.feedback-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+}
+
+.service-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+  font-weight: 600;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: var(--border-color);
+}
+
+.star.filled {
+  color: var(--accent-color);
+}
+
+.quote {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0;
+  padding-top: 2px;
+}
+
+.profile div {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile h4 {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile span {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .feedback-header h2 {
+    font-size: 3rem;
+  }
+
+  .feedback-container {
+    padding: 0 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .feedback-section {
+    padding: 5rem 0;
+  }
+
+  .feedback-container {
+    padding: 0 1.5rem;
+  }
+
+  .feedback-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .feedback-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-header p {
+    padding-left: 1rem;
+  }
+}

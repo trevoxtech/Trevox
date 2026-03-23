@@ -1,0 +1,212 @@
+/* Navbar - Awwwards Aesthetic */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 2rem 3rem;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: var(--bg-primary);
+  padding: 1rem 3rem;
+  box-shadow: var(--shadow-sm);
+  top: 0;
+  width: 100%;
+}
+
+.navbar-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: auto;
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+}
+
+.navbar-logo .logo-container {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme logo text override */
+[data-theme="dark"] .logo-text {
+  color: #ffffff;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.navbar-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: var(--accent-color);
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 1.5rem;
+  }
+
+  .navbar-logo {
+    margin-left: -1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .navbar-menu {
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .navbar-menu a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo {
+    margin-left: -1rem;
+    padding-left: 1rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.2rem;
+    box-shadow: 0 4px 20px var(--shadow-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-menu a {
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navbar-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}

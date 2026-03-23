@@ -1,0 +1,256 @@
+.contact {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.section-header {
+  text-align: left;
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 600px;
+  border-left: 2px solid var(--accent-color);
+  padding-left: 1.5rem;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  margin-top: 3.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+/* Invert icons in dark mode for visibility */
+[data-theme='dark'] .info-icon-image {
+  filter: brightness(0) invert(1);
+}
+
+.info-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info-details {
+  flex: 1;
+}
+
+.info-item:hover .info-title {
+  color: var(--accent-color);
+  transform: translateX(10px);
+}
+
+.info-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  transition: all 0.4s ease;
+}
+
+.info-text {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-link:hover {
+  color: var(--accent-color);
+}
+
+/* Form Styling - Minimalist Editorial */
+.contact-form {
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin: 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.form-group label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  padding: 0.85rem 1.25rem 0.2rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.2rem 1.25rem 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: var(--bg-primary);
+}
+
+.form-group textarea {
+  min-height: 200px;
+  resize: none;
+}
+
+/* Submit Button - Bold Brutalist Block */
+.btn-submit {
+  width: fit-content;
+  padding: 0.8rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: var(--accent-color);
+  letter-spacing: 8px;
+}
+
+.btn-submit:disabled {
+  opacity: 0.3;
+  cursor: wait;
+}
+
+.form-success,
+.form-error {
+  padding: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.form-success {
+  background: rgba(0, 255, 127, 0.1);
+  color: #00ff7f;
+}
+
+.form-error {
+  background: rgba(255, 99, 71, 0.1);
+  color: #ff6347;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .contact {
+    padding: 8rem 0;
+  }
+
+  .contact-content {
+    gap: 4rem;
+  }
+
+  .info-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact {
+    padding: 6rem 0;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    margin-top: 4rem;
+  }
+
+  .info-item {
+    gap: 1.5rem;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+
+  .form-group input {
+    font-size: 1.2rem;
+  }
+
+  .btn-submit {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
